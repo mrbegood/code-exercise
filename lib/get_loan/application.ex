@@ -16,6 +16,7 @@ defmodule GetLoan.Application do
       {Phoenix.PubSub, name: GetLoan.PubSub},
       # Start a worker by calling: GetLoan.Worker.start_link(arg)
       # {GetLoan.Worker, arg},
+      {Task.Supervisor, name: GetLoan.AsyncEmailSupervisor},
       ChromicPDF,
       # Start to serve requests, typically the last entry
       GetLoanWeb.Endpoint

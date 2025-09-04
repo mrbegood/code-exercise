@@ -145,8 +145,15 @@ defmodule GetLoanWeb.ApplicationLive.Form do
     (application.income_per_month - application.expenses_per_month) * 12
   end
 
-  def send_email(_application) do
-    # todo: run async tasks to generate PDF and send Mail
+  def send_email(application) do
+    Task.Supervisor.start_child(GetLoan.AsyncEmailSupervisor, fn ->
+      source_url = "http://localhost:4000/applications/#{application.id}"
+      {:ok, attachment} = ChromicPDF.print_to_pdf({:url, source_url})
+
+      application
+      |> GetLoan.Emails.ApplicationEmail.credit_approved(Base.decode64!(attachment))
+      |> GetLoan.Mailer.deliver()
+    end)
   end
 
   defp return_path("edit", application), do: ~p"/applications/#{application}/edit"
