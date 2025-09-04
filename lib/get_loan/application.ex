@@ -17,7 +17,7 @@ defmodule GetLoan.Application do
       # Start a worker by calling: GetLoan.Worker.start_link(arg)
       # {GetLoan.Worker, arg},
       {Task.Supervisor, name: GetLoan.AsyncEmailSupervisor},
-      ChromicPDF,
+      {ChromicPDF, [no_sandbox: true]},
       # Start to serve requests, typically the last entry
       GetLoanWeb.Endpoint
     ]

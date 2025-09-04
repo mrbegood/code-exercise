@@ -1,0 +1,12 @@
+name: "getloan"
+
+services:
+  elixir-app:
+    image: "getloan/app:latest"
+    build: .
+    ports:
+      - 4000:4000
+
+    # Overrides default command so things don't shut down after the process ends.
+    # command: sleep infinity
+

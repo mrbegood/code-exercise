@@ -1,18 +1,39 @@
 # GetLoan
 
-To start your Phoenix server:
+# Documentation for Running the Application with Docker Compose
 
-* Run `mix setup` to install and setup dependencies
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Installing Docker and Docker Compose
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+1. Go to the official Docker website: https://docs.docker.com/get-docker/
+2. Follow the instructions for your operating system (Windows, macOS, Linux).
+3. After installing Docker, Docker Compose is usually installed automatically. To check, run:
+  ```
+  docker-compose --version
+  ```
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Running the Application
 
-## Learn more
+1. Open a terminal and navigate to your project directory.
+2. Run the following command to start the application:
+  ```
+  docker-compose up
+  ```
+  To run in detached mode, use:
+  ```
+  docker-compose up -d
+  ```
+3. To stop the application, run:
+  ```
+  docker-compose down
+  ```
 
-* Official website: https://www.phoenixframework.org/
-* Guides: https://hexdocs.pm/phoenix/overview.html
-* Docs: https://hexdocs.pm/phoenix
-* Forum: https://elixirforum.com/c/phoenix-forum
-* Source: https://github.com/phoenixframework/phoenix
+4. To open the application in your browser, navigate to http://localhost:4000
+
+## Notes
+
+- Before starting, make sure all required environment variables are specified in the `.env` file (if used).
+- To update containers, use:
+  ```
+  docker-compose pull
+  docker-compose up --build
+  ```
