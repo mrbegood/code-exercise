@@ -56,6 +56,11 @@ defmodule GetLoanWeb.ApplicationLive.Form do
         <h1 class="text-xl">
           Thank you for your request.<br> Check your email for credit details.
         </h1>
+
+        <%= if Mix.env() == :dev do %>
+          <p>Visit development <a href="/dev/mailbox" class="text-blue-500 underline" target="_blank">mailbox</a></p>
+        <% end %>
+
         <.link href={~p"/"} class="btn btn-primary btn-xl">Back to main page</.link>
       </div>
     </Layouts.app>

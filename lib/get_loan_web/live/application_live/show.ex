@@ -6,7 +6,7 @@ defmodule GetLoanWeb.ApplicationLive.Show do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.app flash={@flash}>
+    <Layouts.pdf>
       <div class="mx-auto max-w-2xl space-y-10 text-lg">
         <.list>
           <:item title="Do you have a paying job?">{answer(@application.paying_job_now) }</:item>
@@ -18,7 +18,7 @@ defmodule GetLoanWeb.ApplicationLive.Show do
           <:item title="What is your total monthly expenses (in USD)?">{@application.expenses_per_month }</:item>
         </.list>
       </div>
-    </Layouts.app>
+    </Layouts.pdf>
     """
   end
 

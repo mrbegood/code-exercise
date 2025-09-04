@@ -46,6 +46,38 @@ defmodule GetLoanWeb.Layouts do
   end
 
   @doc """
+  Renders your pdf layout.
+
+  This function is typically invoked from every template,
+  and it often contains your application menu, sidebar,
+  or similar.
+
+  ## Examples
+
+      <Layouts.pdf>
+        <h1>PDF Content</h1>
+      </Layouts.pdf>
+
+  """
+
+  attr :current_scope, :map,
+    default: nil,
+    doc: "the current [scope](https://hexdocs.pm/phoenix/scopes.html)"
+
+  slot :inner_block, required: true
+
+  def pdf(assigns) do
+    ~H"""
+    <main class="container mx-auto min-h-full max-w-5xl flex flex-col gap-6">
+      <div class="flex">
+        {render_slot(@inner_block)}
+      </div>
+    </main>
+    """
+  end
+
+
+  @doc """
   Shows the flash group with standard titles and content.
 
   ## Examples
