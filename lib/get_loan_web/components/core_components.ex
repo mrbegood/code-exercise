@@ -94,7 +94,7 @@ defmodule GetLoanWeb.CoreComponents do
   slot :inner_block, required: true
 
   def button(%{rest: rest} = assigns) do
-    variants = %{"primary" => "btn-primary", nil => "btn-primary btn-soft"}
+    variants = %{"primary" => "btn-primary btn-lg", nil => "btn-primary btn-lg btn-soft"}
 
     assigns =
       assign_new(assigns, :class, fn ->

@@ -18,6 +18,12 @@ defmodule GetLoanWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live_session :default do
+      live "/applications/new", ApplicationLive.Form, :new
+      live "/applications/:id/edit", ApplicationLive.Form, :edit
+      live "/applications/:id", ApplicationLive.Show, :show
+    end
   end
 
   # Other scopes may use custom stacks.
