@@ -31,7 +31,6 @@
 
 ## Notes
 
-- Before starting, make sure all required environment variables are specified in the `.env` file (if used).
 - To update containers, use:
   ```
   docker-compose pull
