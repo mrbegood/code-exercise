@@ -6,7 +6,9 @@ services:
     build: .
     ports:
       - 4000:4000
-
+    env_file: .env
+    volumes:
+      - ./volumes/database:/app/db
     # Overrides default command so things don't shut down after the process ends.
     # command: sleep infinity
 

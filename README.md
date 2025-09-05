@@ -11,6 +11,19 @@
   docker-compose --version
   ```
 
+## Creating the Configuration File
+
+Before running the application, you need to create a `.env` file for configuration. Use the provided `.env.example` as a template:
+
+1. In your project directory, copy the example file:
+  ```
+  cp .env.example .env
+  ```
+2. Open the new `.env` file in a text editor.
+3. Update the environment variables as needed for your setup.
+
+This file will be used by Docker Compose to configure the application.
+
 ## Running the Application
 
 1. Open a terminal and navigate to your project directory.

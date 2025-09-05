@@ -8,10 +8,12 @@ import Config
 config :get_loan, GetLoanWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Configures Swoosh API Client
-config :swoosh, api_client: Swoosh.ApiClient.Req
+config :get_loan, dev_routes: true
+config :swoosh, :api_client, false
+# config :swoosh, api_client: Swoosh.ApiClient.Req
 
 # Disable Swoosh Local Memory Storage
-config :swoosh, local: false
+# config :swoosh, local: false
 
 # Do not print debug messages in production
 config :logger, level: :info

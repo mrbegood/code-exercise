@@ -57,7 +57,7 @@ defmodule GetLoanWeb.ApplicationLive.Form do
           Thank you for your request.<br> Check your email for credit details.
         </h1>
 
-        <%= if Mix.env() == :dev do %>
+        <%= if Application.get_env(:get_loan, :dev_routes) do %>
           <p>Visit development <a href="/dev/mailbox" class="text-blue-500 underline" target="_blank">mailbox</a></p>
         <% end %>
 

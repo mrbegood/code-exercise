@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # setup database
-mix ecto.setup
+/app/bin/migrate
 
 # run application server
-mix phx.server
+/app/bin/server
